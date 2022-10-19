@@ -1,0 +1,80 @@
+nav#sidebar 
+
+	$bar-width: 300px
+	$burger-size: 2rem
+
+	// Set it to top right
+	position: fixed
+	top: 0
+	right: 0
+	z-index: 2
+
+	// The closing toggle
+	#closecapture 
+		// Positioning
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 1
+		height: 100vh
+		width: 100vw
+	
+
+	// The toggle icon
+	#toggle 
+		position: relative
+		z-index: 3
+		padding: 1rem
+		
+
+		// The hamburger element, generated using css only
+		#hamburger 
+			width: $burger-size
+			cursor: pointer
+			// The hamburger 'stripes'
+			div 
+				border: 1px solid $divider-color
+				background: $divider-color
+			    width: 100%
+			    display: block
+			    margin-top: 8px
+			
+			// When open...
+			&.open 
+				div 
+					border: 1px solid white
+					background: white
+	
+
+	// The menu panel
+	#panel 
+		transition-duration: .3s
+
+		// Position
+		z-index: 2
+		position: absolute
+		top: 0
+		right: -$bar-width * 1.1 // Put menu out of screen
+
+		// Styling of the panel
+		width: $bar-width
+		height: 100vh
+		padding: 2rem 0
+		background: $accent-color
+		box-shadow: $hover-shadow
+
+		// Items in the menu
+		a 
+			color: white
+			text-align: center
+			width: 100%
+			display: inline-block
+			text-decoration: none
+			padding: 1rem 0
+
+
+		// When open...
+		&.open 
+			// Move the panel into the screen
+			max-width: $bar-width
+			right: 0

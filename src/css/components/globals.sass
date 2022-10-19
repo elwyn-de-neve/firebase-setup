@@ -1,0 +1,49 @@
+// Globals
+body 
+	padding: 1rem
+	#app 
+		max-width: 100%
+	
+	a 
+		// for hrefless a's
+		cursor: pointer
+	
+
+* 
+	// Set sizing to include element padding
+	box-sizing: border-box
+
+h1, h2, h3 
+	text-transform: capitalize
+
+
+// General form styling
+form 
+	display: flex
+	flex-direction: column
+	input 
+		border: none
+		border-bottom: 1px solid $divider-color
+		padding: .5rem
+		margin: .5rem 0
+		min-width: 250px
+	
+	input[type="submit"] 
+		transition: $shadow-transition
+		border: none
+		background: $accent-color
+		box-shadow: $shadow
+		color: white
+		text-transform: uppercase
+		&:hover 
+			box-shadow: $hover-shadow
+		
+	
+	a 
+		color: $divider-color
+		font-size: .8rem
+		text-align: center
+		text-decoration: none
+		font-style: italic
+		margin-top: 1rem
+	

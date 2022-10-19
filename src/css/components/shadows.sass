@@ -1,0 +1,31 @@
+@mixin depth-1 
+	box-shadow: $shadow
+	transition: $shadow-transition
+
+
+@mixin depth-2 
+	box-shadow: $hover-shadow
+	transition: $shadow-transition
+
+
+@mixin text-hover 
+	&:hover 
+		transition: $shadow-transition
+		text-shadow: $shadow
+	
+
+
+@mixin popout-hover 
+	transition: $shadow-transition
+	&:hover 
+		@include depth-1
+	
+
+
+@mixin depth-hover 
+	@include depth-1
+	transition: $shadow-transition
+	
+	&:hover 
+		@include depth-2
+	

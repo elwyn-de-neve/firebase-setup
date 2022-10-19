@@ -1,0 +1,35 @@
+/* Variables */
+@import "variables.sass"
+@import "components/loading-spinner.sass"
+
+body 
+	// Override browser default padding and margin
+	margin: 0
+	padding: 0
+	// Set font globally
+	font-family: 'Roboto', sans-serif
+	font-weight: 300
+	// Sticky the footer
+	display: flex
+	min-height: 100vh
+	flex-direction: column
+	// Backgorund color
+	background: $background-color
+
+
+#container 
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	min-height: 100vh
+
+
+main 
+	// make footer sticky
+	flex: 1 0 auto
+	// Vertically align content
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column

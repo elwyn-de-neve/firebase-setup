@@ -1,0 +1,92 @@
+@mixin center 
+	// Inner alignment
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+
+
+@mixin button( $size ) 
+
+	// Centration
+	@include center
+
+	// Sizing
+	height: $size
+	width: $size
+
+	// Styling
+	color: white
+	background: $accent-color
+	border-radius: 50%
+	@include depth-hover
+
+
+
+
+#actionbutton 
+
+	// Offset from sides of browser
+	$offset: 1.5rem
+	$size: $offset * 2
+
+	// Positioning
+	position: fixed
+	bottom: $offset
+	right: $offset
+
+	// The clickable label that triggers :checked
+	#toggle 
+
+		// Button styling
+		@include button( $size )
+	
+		// Put the label on top of the rest of items
+		position: relative
+		z-index: 3
+		width: $size
+		height: $size
+	
+
+
+	.action 
+		position: absolute
+		// Button styling
+		@include button( $size )
+		// hidden by default
+		opacity: 0
+		bottom: 0
+		text-decoration: none
+		z-index: 2
+
+	
+
+	// When the checkbox is toggled...
+	&.open 
+
+		// Close capture
+		.closecapture 
+			position: fixed
+			width: 100vw
+			height: 100vh
+			top: 0
+			left: 0
+			opacity: 0
+			z-index: 1
+		
+
+		#toggle 
+			transform: rotate( 45deg ) scale( 1.1 )
+		
+
+		.action 
+			transition-duration: $transition-duration
+			opacity: 1
+			&:nth-of-type( 1 ) 
+				bottom: $size * 1 + $size/5 * 1
+			
+			&:nth-of-type( 2 ) 
+				bottom: $size * 2 + $size/5 * 2
+			
+			&:nth-of-type( 3 ) 
+				bottom: $size * 3 + $size/5 * 3
